@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import os
 import json
 import requests
-
+from djangonautic.settings import BASE_DIR
+file_path = os.path.join(BASE_DIR, 'audio2info/AudioTest2filtered.wav')
 YOUR_API_KEY = 'c0e3d18439e141ecb833126906855db5'
-YOUR_AUDIO_FILE = './AudioTest2filtered.wav'
+YOUR_AUDIO_FILE = file_path
 REGION = 'westus' # westus, eastasia, northeurope
 MODE = 'interactive'
 LANG = 'en-US'
@@ -19,7 +20,7 @@ def get_text_from_audio():
     results = get_text(token, YOUR_AUDIO_FILE)
     # 3. Print Results
     #print(results)
-    return results
+    return results['DisplayText']
 
 def get_token():
     # Return an Authorization Token by making a HTTP POST request to Cognitive Services with a valid API key.
