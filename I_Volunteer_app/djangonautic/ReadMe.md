@@ -4,6 +4,8 @@ Download the folder
 In Windows Command Prompt:
 
 cd to djangonautic folder
+
+
 Type
 py -3 manage.py runserver
 
