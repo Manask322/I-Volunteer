@@ -1,7 +1,8 @@
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
+import requests
 import urllib.request
 import urllib.response
 import sys
@@ -10,6 +11,12 @@ import os, glob
 import http.client, urllib
 import json
 import re
+import os
+
+
+from audio2info.audio2text import *
+
+
 
 accessKey = ' 401ee36d0e6845bbaee016135291e220'
 url = 'westcentralus.api.cognitive.microsoft.com'
@@ -30,7 +37,7 @@ def extractText():
     documents = { 'documents': []}
     count = 1
 
-    text = "There is a flood near VLS International School"
+    text =get_text_from_audio()
     #text = text.strip('\n')
     text = text.encode('ascii','ignore').decode('ascii')
     documents.setdefault('documents').append({"language":"en","id":str(count),"text":text})
@@ -45,6 +52,3 @@ def TextAnalytics(documents):
     conn.request ("POST", path, body, headers)
     response = conn.getresponse ()
     return response.read ()
-
-#if __name__ == '__main__':
-#    handler()
