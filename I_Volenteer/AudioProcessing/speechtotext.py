@@ -1,9 +1,9 @@
 import json
 import requests
 
-YOUR_API_KEY = 'ENTER_YOUR_KEY_HERE'
-YOUR_AUDIO_FILE = './AudioTest2filtered'
-REGION = 'ENTER_YOUR_REGION' # westus, eastasia, northeurope 
+YOUR_API_KEY = ''
+YOUR_AUDIO_FILE = './AudioTest2filtered.wav'
+REGION = 'westus' # westus, eastasia, northeurope 
 MODE = 'interactive'
 LANG = 'en-US'
 FORMAT = 'simple'
