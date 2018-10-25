@@ -8,6 +8,7 @@ class NLP_MAPS(models.Model):
     y = models.FloatField()
     Address = models.TextField()
     intensity = models.IntegerField()
+    Remarks = models.CharField(max_length=50,default='Road Block',)
 
     def __str__(self):
         return self.Address 
