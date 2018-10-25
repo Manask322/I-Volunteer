@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Display markers</title>
+</head>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+    </style>
+<body>
+    <div id="map"></div>
+    <script>
+            function initMap() {
+                var myLatLng = {lat: -25.363, lng: 131.044};
+        
+        //        var map = new google.maps.Map(document.getElementById('map'), {
+          //        zoom: 4,
+            //      center: myLatLng
+              //  });
+        
+                var marker = new google.maps.Marker({
+                  position: myLatLng,
+                  map: map,
+                  title: 'Hello World!'
+                });
+                    // function initMap() {
+             var locations = {{address|safe}};
+             var marker, i;
+        //     var myLatLng = {lat:locations[0]['x'], locations[0]['y']};
+            console.log(locations)
+             var map = new google.maps.Map(document.getElementById('map'), {
+             zoom: 10,
+             center: myLatLng
+             });
+             for (i = 0; i < locations.length; i++) { 
+                 marker = new google.maps.Marker({
+
+                     position: new google.maps.LatLng(locations[i]['x'], locations[i]['y']),
+                     map: map,
+                     title: locations[i]['Address']
+                 });
+            }
+        // }
+        }
+    </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdl9Xvi8Yipfx-ldaB9RtluwGEyuU1KHM&callback=initMap">
+        </script>
+</body>
+</html>
