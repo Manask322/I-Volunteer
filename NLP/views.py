@@ -41,4 +41,7 @@ def maps(request):
     # serial = serializers.serialize('json', [ address, ])
     json_data = json.dumps(list(address))
     return render(request,'NLP/maps.html',{'address':json_data})
+
+def upload(request):
+    return render(request,'NLP/upload.html') 
     
