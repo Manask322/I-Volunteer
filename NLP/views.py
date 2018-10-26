@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.core import serializers
 import json
 from django.http import HttpResponse
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 
 from NLP.models import NLP_MAPS
 # Create your views here.
@@ -10,8 +12,9 @@ from . import text2info
 
 from .models import NLP_MAPS
 
-def index(request):
+def index():
     template = 'NLP/index.html'
+    print(template)
     map = NLP_MAPS()
     res = {}
     res = text2info.get_info()
@@ -26,8 +29,7 @@ def index(request):
     map.x = geocode_result[0]['geometry']['location']['lat']
     map.y = geocode_result[0]['geometry']['location']['lng']
     map.intensity = res['Intensity']
-    map.save()
-    return render(request,template,{'res':res})  
+    map.save() 
 
 def dashboard(request):
     address = NLP_MAPS.objects.all()
@@ -42,6 +44,21 @@ def maps(request):
     json_data = json.dumps(list(address))
     return render(request,'NLP/maps.html',{'address':json_data})
 
+
 def upload(request):
-    return render(request,'NLP/upload.html') 
-    
+    print("fshuhdsi")
+    if request.method == 'POST' and request.FILES['myfile']:
+        print("ywuueiwi")
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'NLP/index.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+        index()
+    return render(request, 'NLP/upload.html')
+
+    if request.method == 'GET':
+        print("jujdsd .....")
+        return render(request, 'NLP/upload.html')

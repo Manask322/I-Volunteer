@@ -8,5 +8,5 @@ urlpatterns = [
     path('maps/',views.maps,name='maps'),
     path('dashboard/',views.dashboard,name='dashboard'),
     path('test/',views.index,name='index'),
-    path('upload',views.upload,name='upload'),
+    path('upload/',views.upload,name='upload'),
 ]
