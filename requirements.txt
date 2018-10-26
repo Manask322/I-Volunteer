@@ -60,7 +60,7 @@ PyNaCl==1.1.2
 PyOpenGL==3.1.0
 pyparsing==2.2.0
 pyRFC3339==1.0
-python-apt==1.6.2
+python-apt==0.7.8
 python-debian==0.1.32
 pytz==2018.5
 pyxdg==0.25
