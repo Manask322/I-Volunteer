@@ -39,7 +39,6 @@ numpy==1.13.3
 oauth==1.0.1
 oauthlib==2.0.6
 olefile==0.45.1
-onboard==1.4.1
 padme==1.1.1
 pexpect==4.2.1
 Pillow==5.1.0
