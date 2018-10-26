@@ -1,13 +1,3 @@
-unity-scope-colourlovers==0.1
-unity-scope-devhelp==0.1
-unity-scope-firefoxbookmarks==0.1
-unity-scope-manpages==0.1
-unity-scope-openclipart==0.1
-unity-scope-texdoc==0.1
-unity-scope-tomboy==0.1
-unity-scope-virtualbox==0.1
-unity-scope-yelp==0.1
-unity-scope-zotero==0.1
 urllib3==1.24
 usb-creator==0.3.3
 wadllib==1.3.2
