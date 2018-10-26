@@ -1,4 +1,3 @@
-unity-scope-chromiumbookmarks==0.1
 unity-scope-colourlovers==0.1
 unity-scope-devhelp==0.1
 unity-scope-firefoxbookmarks==0.1
