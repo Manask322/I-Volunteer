@@ -25,7 +25,6 @@ django-filter==1.1.0
 djangorestframework==3.7.7
 djangorestframework-jwt==1.11.0
 dnspython==1.15.0
-duplicity==0.7.17
 entrypoints==0.2.3
 enum34==1.1.6
 eyeD3==0.8.4
