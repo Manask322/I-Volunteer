@@ -4,19 +4,21 @@ import os
 import json
 import requests
 from I_Volenteer.settings import BASE_DIR
-file_path = os.path.join(BASE_DIR, 'Audio_File/AudioTest2filtered.wav')
+# file_path = os.path.join(BASE_DIR, 'Audio_File/AudioTest2filtered.wav')
 YOUR_API_KEY = 'c0e3d18439e141ecb833126906855db5'
-YOUR_AUDIO_FILE = file_path
 REGION = 'westus' # westus, eastasia, northeurope
 MODE = 'interactive'
 LANG = 'en-US'
 FORMAT = 'simple'
 
 
-def get_text_from_audio():
+
+def get_text_from_audio(filename):
     # 1. Get an Authorization Token
     token = get_token()
     # 2. Perform Speech Recognition
+    YOUR_AUDIO_FILE = BASE_DIR
+    YOUR_AUDIO_FILE = YOUR_AUDIO_FILE + filename
     results = get_text(token, YOUR_AUDIO_FILE)
     # 3. Print Results
     #print(results)

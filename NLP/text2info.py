@@ -12,7 +12,7 @@ import http.client, urllib
 import json
 import re
 import os
-
+import ast
 
 from NLP.audio2text import *
 
@@ -22,28 +22,31 @@ url = 'westcentralus.api.cognitive.microsoft.com'
 path = '/text/analytics/v2.0/keyPhrases'
 result = []
 
-def get_detials(json_query):
+def get_details(result):
     res = {}
-    res['Address'] = '1600 Amphitheatre Parkway, Mountain View, CA'
-    res['Intensity'] = 1
+    res['Address'] = str(result['documents'][0]['keyPhrases'][0])
+    res['Intensity'] = 2
+    res['Remark'] = str(result['documents'][0]['keyPhrases'][1])
     return res
 
-def get_info():
+def get_info(converted_text):
     # 1.
-    documents = extractText()
+    documents = extractText(converted_text)
     # 2. Perform Text Analysis
     result = TextAnalytics(documents)
-    print(result)
-    res = get_detials(result)
+    result = result.decode("ascii")
+    result = ast.literal_eval(result)
+    print(result, ",,,.... " , type(result['documents'][0]['keyPhrases']))
+    print(result['documents'][0]['keyPhrases'][0])
+    res = get_details(result)
     return res
     # 3. Print Results
     #print (json.dumps(json.loads(result), indent=4))
 
-def extractText():
+def extractText(converted_text):
     documents = { 'documents': []}
     count = 1
-
-    text =get_text_from_audio()
+    text =converted_text
     #text = text.strip('\n')
     text = text.encode('ascii','ignore').decode('ascii')
     documents.setdefault('documents').append({"language":"en","id":str(count),"text":text})
