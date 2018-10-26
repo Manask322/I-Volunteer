@@ -60,7 +60,6 @@
               }
               
               
-              /* demo styles */
               
               @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
               body{
@@ -71,9 +70,6 @@
               section{
                 margin: 50px;
               }
-              
-              
-              /* follow me template */
               .made-with-love {
                 margin-top: 40px;
                 padding: 10px;
@@ -98,9 +94,6 @@
                 text-decoration: underline;
               }
               
-              
-              /* for custom scrollbar for webkit browser*/
-              
               ::-webkit-scrollbar {
                   width: 6px;
               } 
@@ -114,27 +107,9 @@
 </head>
 <body>
     <header role="banner">
-        {% comment %} <div class="top-bar">
-            <div class="container">
-            <div class="row">
-                <div class="col-6">
-                <a href="#"><span class="fa fa-twitter"></span></a>
-                <a href="#"><span class="fa fa-facebook"></span></a>
-                <a href="#"><span class="fa fa-instagram"></span></a>
-                <a href="#"><span class="fa fa-linkedin"></span></a>
-                </div>
-                <div class="col-6 text-right d-sm-flex d-flex">
-                <d class="ml-auto">
-                    <a href="#" class="btn">Sponsor</a>
-                    <a href="#" class="cta-btn">Login</a>
-                </d>
-                </div>
-            </div>
-            </div>
-        </div> {% endcomment %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-            <a class="navbar-brand" href="index.html">I_Volunteer</a>
+            <a class="navbar-brand" href="{% url 'NLP:home' %}">I_Volunteer</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -142,7 +117,7 @@
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{% url 'NLP:home' %}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="https://www.karnatakaone.gov.in/Info/Public/CalamityReliefFund" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Donate</a>
