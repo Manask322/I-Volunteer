@@ -71,7 +71,6 @@ SecretStorage==2.3.1
 simplejson==3.13.2
 six==1.11.0
 systemd-python==234
-ufw==0.35
 unattended-upgrades==0.1
 unity-scope-calculator==0.1
 unity-scope-chromiumbookmarks==0.1
