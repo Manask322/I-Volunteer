@@ -25,7 +25,7 @@ SECRET_KEY = 'dk9*3dm_u@np)=k)9dtii+6%*q7@edk!u_x2m9^2pn($hw1*=-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [https://ivolunteerdisaster.herokuapp.com/,]
 
 import dj_database_url
 # Application definition
