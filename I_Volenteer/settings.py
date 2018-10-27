@@ -25,7 +25,7 @@ SECRET_KEY = 'dk9*3dm_u@np)=k)9dtii+6%*q7@edk!u_x2m9^2pn($hw1*=-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [https://ivolunteerdisaster.herokuapp.com/,]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','ivolunteerdisaster.herokuapp.com']   
 
 import dj_database_url
 # Application definition
@@ -116,8 +116,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'NLP/static')
 MEDIA_URL = '/Audio_File/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Audio_File')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'NLP/Audio_File')

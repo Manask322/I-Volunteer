@@ -17,7 +17,7 @@ def get_text_from_audio(filename):
     # 1. Get an Authorization Token
     token = get_token()
     # 2. Perform Speech Recognition
-    YOUR_AUDIO_FILE = BASE_DIR
+    YOUR_AUDIO_FILE = os.path.join(BASE_DIR, 'NLP')
     YOUR_AUDIO_FILE = YOUR_AUDIO_FILE + filename
     results = get_text(token, YOUR_AUDIO_FILE)
     # 3. Print Results
